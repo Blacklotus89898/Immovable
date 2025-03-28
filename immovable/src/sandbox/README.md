@@ -6,7 +6,40 @@
 # Creating new project
 cargo new projectName
 
-# Building the exec
-cargo
+# Formatting everything
+cargo fmt 
+
+# Check for errors
+cargo check
+
+cargo build
+
+cargo run 
+
+cargo clean
+
+
+# Dependencies
+cargo add crate_name
+
+cargo outdated
+
+cargo test
+
+cargo fmt
+
+
+# Deploy and release
+cargo build --release
+
+cargo publish
+
+# REPL
+cargo install evcxr
+evcxr
+
+
+# Building the exec individually
+rustc file.rs ; ./file
 
 ```
