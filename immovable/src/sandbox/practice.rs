@@ -123,12 +123,39 @@ fn main() {
     p.greet();
 
     // Generics
-    fn print<T>(x: T) {
+    fn print<T: std::fmt::Debug>(x: T) {
         println!("{:?}", x);
     }
 
     print(5);
     print("Hello");
+
+    // Ownership
+    let s = String::from("Hello");
+    let s1 = s;
+    // println!("{}", s); // Error: value borrowed here after move
+    // println!("{}", s1);
+    println!("{}", s1.len());
+
+    let s = String::from("Hello"); // need to redeclare s
+    let s1 = s.clone(); // need to clone s
+    println!("{}", s1);
+
+    print_string(s); // s is moved and no longer accessible
+
+    let n = 10;
+    print_number(n); // n is copied because integers implement `Copy`
+
+
+    // Ownership moved
+    fn print_string(s: String) {
+        println!("{}", s);
+    }
+
+    // Borrowing
+    fn print_number(n: i32) {
+        println!("{}", n);
+    }
 
     // Lifetimes
     fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
@@ -159,9 +186,44 @@ fn main() {
         Err(message) => println!("Error: {}", message),
     }
 
+    // Option
+    match divide2(10.0, 2.0) {
+        Some(result) => println!("Result: {}", result),
+        None => println!("Cannot divide by zero"),
+    }
+
+    // Option inside Result
+    let result = option_inside_result(Some(10), Some(2));
+    match result {
+        Ok(Some(value)) => println!("Result: {}", value),
+        Ok(None) => println!("Result is None"),
+        Err(message) => println!("Error: {}", message),
+    }
+
 }
 
 // Compiler is not one-pass, so function can be defined after main
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
+
+fn divide2(a: f64, b: f64) -> Option<f64> {
+    if b == 0.0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+fn option_inside_result(a: Option<i32>, b: Option<i32>) -> Result<Option<i32>, String> {
+    match (a, b) {
+        (Some(a_val), Some(b_val)) => {
+            if b_val == 0 {
+                Err(String::from("Cannot divide by zero"))
+            } else {
+                Ok(Some(a_val / b_val))
+            }
+        }
+        _ => Err(String::from("One or both options are None")),
+    }
+}
+
