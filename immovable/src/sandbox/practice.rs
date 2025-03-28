@@ -1,4 +1,5 @@
 mod mod1;
+mod person;
 
 fn main() {
     // Printing
@@ -80,6 +81,33 @@ fn main() {
 
     // Modules
     mod1::say_hello();
+
+    // Structs
+    let p = person::Person {
+        name: String::from("Alice"),
+        age: 25,
+    };
+    println!("{} is {} years old", p.name, p.age);
+
+    // Enum
+    enum Direction {
+        Up,
+        Down,
+        Left,
+        Right,
+    }
+
+    fn move_player(dir: Direction) {
+        match dir {
+            Direction::Up => println!("Moving Up"),
+            Direction::Down => println!("Moving Down"),
+            Direction::Left => println!("Moving Left"),
+            Direction::Right => println!("Moving Right"),
+        }
+    }
+
+    move_player(Direction::Up);
+    move_player(Direction::Down);
 
 }
 
