@@ -109,6 +109,56 @@ fn main() {
     move_player(Direction::Up);
     move_player(Direction::Down);
 
+    // Traits -- similar to interfaces in other languages
+    trait Greet {
+        fn greet(&self);
+    }
+
+    impl Greet for person::Person {
+        fn greet(&self) {
+            println!("Hello, my name is {}", self.name);
+        }
+    }
+
+    p.greet();
+
+    // Generics
+    fn print<T>(x: T) {
+        println!("{:?}", x);
+    }
+
+    print(5);
+    print("Hello");
+
+    // Lifetimes
+    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+        if x.len() > y.len() {
+            x
+        } else {
+            y
+        }
+    }
+
+    let s1 = String::from("abcd");
+    let s2 = String::from("xyz");
+    let result = longest(s1.as_str(), s2.as_str());
+    println!("The longest string is {}", result);
+
+    // Error Handling
+    fn divide(a: i32, b: i32) -> Result<i32, String> {
+        if b == 0 {
+            return Err(String::from("Cannot divide by zero"));
+        }
+        Ok(a / b)
+    }
+
+    // Similar to try-catch
+    let result = divide(10, 2);
+    match result {
+        Ok(value) => println!("Result: {}", value),
+        Err(message) => println!("Error: {}", message),
+    }
+
 }
 
 // Compiler is not one-pass, so function can be defined after main
