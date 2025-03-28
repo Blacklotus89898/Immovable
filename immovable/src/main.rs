@@ -1,3 +1,8 @@
+mod module1;
+mod module2; // Points to `src/module2/mod.rs`
+
 fn main() {
-    println!("Hello, world!");
+    module1::function1();
+    module2::submodule::function2();
 }
+
