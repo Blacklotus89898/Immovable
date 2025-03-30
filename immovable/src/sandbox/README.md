@@ -38,6 +38,9 @@ cargo publish
 cargo install evcxr
 evcxr
 
+# Generating Documentation
+cargo doc
+cargo doc --open
 
 # Building the exec individually
 rustc file.rs ; ./file

@@ -1,0 +1,1 @@
+# Terminal App similar to yazi
