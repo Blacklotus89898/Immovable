@@ -46,3 +46,12 @@ cargo doc --open
 rustc file.rs ; ./file
 
 ```
+
+
+## Learning Plan
+
+- [ ] Write simple functions daily
+- [ ] Checkout terminal app
+- [ ] HFT and Critical Systems
+- [ ] Webasm
+- [ ] Chekcout metrics and complete latex analysis
