@@ -1,5 +1,6 @@
 mod mod1;
 mod person;
+mod math;
 
 fn main() {
     // Printing
@@ -200,6 +201,13 @@ fn main() {
         Err(message) => println!("Error: {}", message),
     }
 
+    // Using math module
+    println!("Fibonacci of 5: {}", math::fibonacci(5));
+    println!("Factorial of 5: {}", math::factorial(5));
+    println!("Is 5 prime? {}", math::is_prime(5));
+    println!("GCD of 10 and 5: {}", math::gcd(10, 5));
+    println!("LCM of 10 and 5: {}", math::lcm(10, 5));
+    println!("Power of 2^3: {}", math::power(2, 3));
 }
 
 // Compiler is not one-pass, so function can be defined after main
