@@ -17,8 +17,9 @@ fn main() {
         }
 
         println!("You entered: {}", input);
+
+        // For debugging
+        println!("data type:{input:?}");
     }
 }
-
-// List current directory`
 
