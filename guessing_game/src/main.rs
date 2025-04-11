@@ -16,7 +16,7 @@ fn main() {
     // Print a welcome message using the name
     println!("Welcome to the guessing game, {name}!");
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
+    let secret_number = rand::rng().random_range(1..=100);
 
     println!("Guess a number");
 
@@ -32,7 +32,7 @@ fn main() {
         // Convert the guess to an integer
         guess = guess_input.trim().parse().unwrap();
 
-        if (guess < secret_number) {
+        if guess < secret_number {
             println!("Too low!");
         } else {
             println!("Too high!");
