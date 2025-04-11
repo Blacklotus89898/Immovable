@@ -1,4 +1,5 @@
-# Immovable
+# Immovable 
+Current rust workspace for projects 
 
 ## Rust WebAssembly
 - Entry point in lib.rs
@@ -7,6 +8,9 @@
 # Compile webasm code
 wasm-pack build --target web
 
-# Add project to workspace
+``` 
+
+## Add project to workspace
+```bash
 cargo new new_app 
 ```
