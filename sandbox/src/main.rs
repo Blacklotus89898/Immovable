@@ -18,8 +18,31 @@ fn main() {
 
         println!("You entered: {}", input);
 
+        passByRef(input);
+
+        // passMut(input); // Uncommenting this will cause a compile-time error
+        let mut input = String::from(input);
+        passMut(&mut input);
+        // passByValue(input); // Uncommenting this will cause a compile-time error
+        passByValue(input.clone()); // Cloning to pass by value
+        
+
         // For debugging
         println!("data type:{input:?}");
     }
 }
 
+
+fn passByRef(input: &str) {
+    println!("You passed by reference: {}", input);
+
+}
+
+fn passMut(input: &mut String) {
+    input.push_str(" - modified");
+    println!("You passed by mutable reference: {}", input);
+}
+
+fn passByValue(input: String) {
+    println!("You passed by value: {}", input);
+}
