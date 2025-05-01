@@ -24,6 +24,23 @@ fn main() {
 
     println!("{number:0>widht$}", number=1, widht=5); // Pad with custom character
 
+    // Debugging
+
+
+    // Primitives
+    let logical: bool = true;
+
+    let fl: f64 = 1.0; // Float
+    let c: char = 'a'; // Character
+    let i = 5i32; // Integer, suffix annotation
+    let mut myInfer = "sfdgs";
+
+    let myArray: [i32; 5] = [1, 2, 3, 4, 5]; // Array
+    let mySlice: &[i32] = &myArray[1..3]; // Slice
+
+    let myTuple: (i32, f64, char) = (1, 2.0, 'a'); // Tuple
+    let myTuple2 = (1, 2.0, 'a'); // Tuple with type inference
+    
 
 
     println!("Hello, world!");
