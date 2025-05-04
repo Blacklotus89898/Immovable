@@ -89,6 +89,43 @@ fn main() {
         println!("number: {}", number);
     }
 
+
+    // Structs
+    #[derive(Debug)]
+    struct Person {
+        name: String,
+        age: i32,
+    }
+
+    let person = Person {
+        name: String::from("Alice"),
+        age: 30,
+    };
+    println!("Person: {} is {} years old", person.name, person.age);
+    println!("Person: {:#?}", person); // Debug print
+    println!("Person: {:?}", person); // Debug print
+
+    impl Person {
+        fn rename(&mut self, name: String) {
+            self.name = name;
+        }
+        fn birthday(&mut self) {
+            self.age += 1;
+        }
+    }
+
+    let mut Alice = Person {
+        name: String::from("Alice"),
+        age: 30,
+    };
+
+    Alice.rename(String::from("Bob"));
+    println!("Person: {} is {} years old", Alice.name, Alice.age);
+    Alice.birthday();
+    println!("Person: {} is {} years old", Alice.name, Alice.age);
+
+
+
     
 
 
