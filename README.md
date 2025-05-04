@@ -12,5 +12,9 @@ wasm-pack build --target web
 
 ## Add project to workspace
 ```bash
+# Create new project
 cargo new new_app 
+
+# Compile individual app
+rustc
 ```
