@@ -30,7 +30,16 @@ fn main() {
     // Primitives
     let logical: bool = true;
 
-    let fl: f64 = 1.0; // Float
+    let fl: f64 = 1.0; // Float = 64 bits
+    let fl2: f32 = 1.0; // Float = 32 bits
+    let myInt: i32 = 1; // Integer = 32 bits
+    let myInt2: i64 = 1; // Integer = 64 bits
+    let myInt3: i8 = 1; // Integer = 8 bits
+    let myInt4: i16 = 1; // Integer = 16 bits
+    let myInt5: u32 = 1; // Unsigned Integer = 32 bits
+    let myInt6: u64 = 1; // Unsigned Integer = 64 bits
+    let myInt7: u8 = 1; // Unsigned Integer = 8 bits
+
     let c: char = 'a'; // Character
     let i = 5i32; // Integer, suffix annotation
     let mut myInfer = "sfdgs";
@@ -40,6 +49,46 @@ fn main() {
 
     let myTuple: (i32, f64, char) = (1, 2.0, 'a'); // Tuple
     let myTuple2 = (1, 2.0, 'a'); // Tuple with type inference
+
+    let (a, b, c) = myTuple; // Destructuring tuple
+    println!("a: {}, b: {}, c: {}", a, b, c);
+    println!("myArray: {:?}", myArray); // Debug print
+
+    let a = myTuple.0;
+
+    println!("a: {}", a); // Accessing tuple element
+
+    // Loops 
+    let mut counter: i32 = 0;
+    let loop_val = loop {
+        println!("loopVal: {}", counter);
+        counter += 1;
+        if counter== 5 {
+            break counter;
+        }
+    };
+
+    println!("loopVal: {}", loop_val); // Accessing loop value
+
+    let mut counter: i32 = 0;
+    while counter < 4 {
+        println!("counter: {}", counter);
+        counter += 1;
+    }
+
+    for number in 1..5 {
+        println!("number: {}", number);
+    }
+    for number in (1..5).rev() {
+        println!("number: {}", number);
+    }
+
+    let mut myVec: Vec<i32> = vec![1, 2, 3, 4, 5]; // Vector
+
+    for number in myVec.iter() {
+        println!("number: {}", number);
+    }
+
     
 
 
