@@ -31,6 +31,8 @@ fn main() {
     let logical: bool = true;
 
     let fl: f64 = 1.0; // Float = 64 bits
+    let fl: f32 = 1.0f32; // Suffix annotation
+    let fl: f64 = 1.0f64; // Suffix annotation
     let fl2: f32 = 1.0; // Float = 32 bits
     let myInt: i32 = 1; // Integer = 32 bits
     let myInt2: i64 = 1; // Integer = 64 bits
@@ -39,6 +41,14 @@ fn main() {
     let myInt5: u32 = 1; // Unsigned Integer = 32 bits
     let myInt6: u64 = 1; // Unsigned Integer = 64 bits
     let myInt7: u8 = 1; // Unsigned Integer = 8 bits
+
+    // casting
+    let myInt8: i32 = 1;
+    let myInt9: i64 = myInt8 as i64; // Casting to 64 bits
+    let myInt10: i32 = myInt9 as i32; // Casting to 32 bits
+
+    type NanoSecond = u64; // Type alias
+    let x: NanoSecond = 5; // Type alias
 
     let c: char = 'a'; // Character
     let i = 5i32; // Integer, suffix annotation
@@ -90,7 +100,7 @@ fn main() {
     }
 
 
-    // Structs
+    // Structs -- custome data types
     #[derive(Debug)]
     struct Person {
         name: String,
@@ -124,9 +134,58 @@ fn main() {
     Alice.birthday();
     println!("Person: {} is {} years old", Alice.name, Alice.age);
 
+    struct Point {
+        x: f64,
+        y: f64,
+    }
+
+    impl Point {
+        // Method to create a new Point
+        fn new(x: f64, y: f64) -> Point {
+            Point { x, y }
+        }
+
+        // Method for length
+        fn distance(&self, other: &Point) -> f64 {
+            ((self.x - other.x).powi(2) + (self.y - other.y).powi(2)).sqrt()
+        }
+    }
+
+    let point = Point { x: 1.0, y: 2.0 };
+    let another_point = Point::new(23.0, 234.0);
+    let distance = point.distance(&another_point);
+    println!("Distance: {}", distance);
+
+    let point = Point { x: 1.0, ..point }; // Struct update syntax, by copying the value of x from point
+
+    // Enums
+    #[derive(Debug)]
+    enum Direction {
+        Up,
+        Down,
+        Left,
+        Right,
+    }
 
 
-    
+    // Vectors and Slices
+    let xs = vec![1, 2, 3, 4, 5]; //vectir
+    let ys = [6, 7, 8, 9, 10]; //array
+    let zs = &xs[1..3]; //slice
+
+    println!("xs: {:?}", xs);
+    println!("ys: {:?}", ys);
+    println!("zs: {:?}", zs);
+    println!("xs[0]: {}", xs[0]);
+
+    for i in 0..xs.len() + 1 {
+        match xs.get(i) {
+            Some(&x) => println!("xs[{}]: {}", i, x),
+            None => println!("xs[{}]: None", i),
+        }
+    }
+
+
 
 
     println!("Hello, world!");
