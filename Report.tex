@@ -1,0 +1,126 @@
+\documentclass[a4paper,12pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+    pdftitle={Programming Language Analysis Report},
+    pdfauthor={Stev Chen}
+}
+\geometry{margin=1in}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+% Title & Metadata
+\title{Programming Language Analysis Report: Rust}
+\author{Steve Chen and GPT}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% -------------------- SECTION 1 --------------------
+\section*{Document Metadata}
+\addcontentsline{toc}{section}{Document Metadata}
+
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Language Name} & Rust \\
+\hline
+\textbf{Author(s)} & Steve Chen \\
+\hline
+\textbf{Date} & \today \\
+\hline
+\textbf{Version} & 1.0 \\
+\hline
+\end{tabular}
+
+% -------------------- SECTION 2 --------------------
+\section{Executive Summary}
+
+\subsection{Overview}
+A high-level introduction to the Rust programming language.
+
+\subsection{Purpose of This Report}
+Describe the aim of the analysis — educational, evaluative, etc.
+
+\subsection{Key Findings}
+Summarize Rust’s core strengths, market position, and future prospects.
+
+% -------------------- SECTION 3 --------------------
+\section{Background and Context}
+
+\subsection{History}
+Origin, first release, and historical motivation behind Rust.
+
+\subsection{Creators and Organization}
+The Mozilla Foundation and the Rust community’s involvement.
+
+\subsection{Evolution and Milestones}
+Versioning, tooling improvements, and major releases.
+
+\subsection{Typical Use Cases}
+Systems programming, embedded, web (via WASM), CLI tools, etc.
+
+% -------------------- SECTION 4 --------------------
+\section{Language Philosophy}
+
+\subsection{Core Design Principles}
+Memory safety without garbage collection, zero-cost abstractions, fearless concurrency.
+
+\subsection{Programming Paradigms}
+Supports functional, imperative, and concurrent programming styles.
+
+\subsection{Typing System}
+Static, strong, and type-inferred.
+
+% -------------------- SECTION 5 --------------------
+\section{Syntax and Semantics}
+
+\subsection{Hello World Example}
+\begin{verbatim}
+fn main() {
+    println!("Hello, world!");
+}
+\end{verbatim}
+
+\subsection{Variables}
+Immutable by default with `let`; mutable via `let mut`.
+
+\subsection{Functions}
+Function declaration syntax and return types.
+
+\subsection{Control Structures}
+if/else, match, loop, while, for.
+
+\subsection{Modules and Namespaces}
+`mod`, `use`, and `crate` system for package organization.
+
+\subsection{Standard Library Overview}
+Brief look at `std::collections`, `std::io`, and `std::thread`.
+
+% -------------------- SECTION 6 --------------------
+\section{History and Evolution}
+\subsection{Key Milestones}
+\subsection{Major Contributors}
+
+% -------------------- SECTION 7 --------------------
+\section{Advantages and Limitations}
+\subsection{Strengths}
+\subsection{Challenges and Drawbacks}
+
+% -------------------- SECTION 8 --------------------
+\section{Conclusion}
+\subsection{Summary of Findings}
+\subsection{Future Potential and Trends}
+
+\end{document}
