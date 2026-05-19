@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-rust-api
+  namespace: default
+  labels:
+    app: simple-rust-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-rust-api
+  template:
+    metadata:
+      labels:
+        app: simple-rust-api
+    spec:
+      containers:
+      - name: rust-api
+        image: YOUR_DOCKERHUB_USERNAME/simple-rust-api:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        # Simple health check matching our Axum root endpoint
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 3
+          periodSeconds: 5
