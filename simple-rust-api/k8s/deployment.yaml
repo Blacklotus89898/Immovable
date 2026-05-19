@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: rust-api
-        image: YOUR_DOCKERHUB_USERNAME/simple-rust-api:v1
+        image: blacklotus89898/simple-rust-api:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
