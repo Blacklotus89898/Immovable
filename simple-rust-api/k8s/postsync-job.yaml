@@ -67,5 +67,5 @@ spec:
           echo "App: $ARGOCD_APP_NAME"
           echo "Namespace: $ARGOCD_APP_NAMESPACE"
 
-          echo "===== LIVE RESOURCES ====="
-          kubectl get all -n "$ARGOCD_APP_NAMESPACE" -o yaml
+          echo "===== DEPLOYMENT ====="
+          kubectl get deployment simple-rust-api -n "$ARGOCD_APP_NAMESPACE" -o yaml
